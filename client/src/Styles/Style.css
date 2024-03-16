@@ -4,6 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Nunito";
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -33,11 +34,6 @@ body {
     }
 }
 
-.sidebar {
-    background-color: white;
-    box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
-}
-
 .layout {
     display: flex;
     flex-direction: column;
@@ -57,12 +53,12 @@ body {
 }
 
 .navbar-container {
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: auto;
     width: 100%;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     z-index: 99999999;
     background: rgba(255, 255, 255, 0.2);

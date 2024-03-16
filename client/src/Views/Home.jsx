@@ -1,8 +1,16 @@
 import React from 'react'
 
+import { About, Hero } from '../Components/Index'
+import HomeLayout from '../Layout/Home.Layout'
+
 const Home = () => {
     return (
-        <div>Home</div>
+        <HomeLayout>
+            <div className='flex flex-col justify-center mt-32 md:mt-20'>
+                <Hero />
+                <About />
+            </div>
+        </HomeLayout>
     )
 }
 
