@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <AuthLayout>
-      <div className='flex flex-col border-2 border-[#000] dark:border-white rounded-xl py-5 sm:py-10 px-6 sm:px-14'>
+      <div className='flex flex-col bg-white shadow-2xl rounded-2xl border-2 border-white dark:border-black dark:bg-black py-5 sm:py-10 px-6 sm:px-14  transition-[flex] duration-[0.7s] ease-out-flex'>
         <div className='flex flex-col gap-y-2'>
           <span className='font-extrabold text-xl sm:text-2xl text-[#000] dark:text-white'>Welcome back</span>
           <span className='text-[#000] dark:text-white'>Please enter the following information to continue</span>

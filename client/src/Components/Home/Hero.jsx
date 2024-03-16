@@ -22,10 +22,10 @@ const Hero = () => {
         <div>
             <div className='flex flex-col-reverse items-center justify-center w-full gap-10 mx-auto mt-0 lg:gap-20 md:mt-20 md:flex-row'>
                 <div className='flex flex-col max-w-md lg:max-w-xl'>
-                    <span className='mb-5 text-4xl lg:text-5xl py-6 font-extrabold text-[#000]'>
+                    <span className='mb-5 text-4xl lg:text-5xl py-6 font-extrabold text-[#000] dark:text-white'>
                         A Secure and Confidential Medical Platform
                     </span>
-                    <span className='text-[#000] text-base lg:text-lg'>
+                    <span className='text-[#000] dark:text-white text-base lg:text-lg'>
                         At D'Accubin, we understand the significance of your medical records and their role in ensuring comprehensive and personalized healthcare. Our platform not only facilitates seamless access to medical services but also prioritizes the secure management and storage of your valuable health information.
                     </span>
                     <div className='flex items-center justify-center mt-10 sm:justify-start'>

@@ -12,14 +12,14 @@ const Header = () => {
         </Link>
         <div className='flex items-center gap-2 gap-x-4'>
           <Link
-            className="sm:flex hidden items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 text-[#000] transition-all duration-150 border-[1px] border-transparent rounded-full hover:bg-black hover:text-white"
+            className="sm:flex hidden items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 text-[#000] dark:text-white transition-all duration-150 border-[1px] border-transparent rounded-full dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
             to="/Login"
           > Sign in
           </Link>
           <Link
-            className="flex items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 hover:text-[#fff] transition-all duration-150 border-[1px] border-[#000] rounded-full hover:bg-[#000] text-[#000]"
+            className="flex items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 hover:text-[#fff] dark:hover:text-black transition-all duration-150 border-[1px] border-[#000] dark:border-white rounded-full hover:bg-[#000] dark:hover:bg-white text-[#000] dark:text-white"
             to="/Register"
-          > Get Started
+          > Doctors
           </Link>
         </div>
       </div>

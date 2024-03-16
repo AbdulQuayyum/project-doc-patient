@@ -45,7 +45,7 @@ const About = () => {
                 className="2xl:max-w-[1280px] w-full mx-auto flex flex-col"
             >
                 <span
-                    className='mb-5 text-4xl lg:text-5xl py-6 flex items-center justify-center font-extrabold text-[#000]'>
+                    className='mb-5 text-4xl lg:text-5xl py-6 flex items-center justify-center font-extrabold text-[#000] dark:text-white'>
                     Why Should you choose our Platform?
                 </span>
                 <div className="mt-[50px] flex xl:flex-row flex-col min-h-[70vh] gap-5">
