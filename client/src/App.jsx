@@ -1,9 +1,11 @@
 import React from 'react'
 
+import MainRoutes from './Routes/Main.Routes'
+
 const App = () => {
   return (
     <>
-      <p>No Name Yet || A Medical Platform</p>
+      <MainRoutes />
     </>
   )
 }
