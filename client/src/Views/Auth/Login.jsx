@@ -74,7 +74,7 @@ const Login = () => {
             />
             {passwordStrength !== "Strong" && <p>Password Strength: {passwordStrength}</p>}
             <button
-              className="absolute inset-y-0 right-0 flex items-center px-4 text-black dark:text-white"
+              className="absolute bottom-6 inset-y-0 right-0 flex items-center px-4 text-black dark:text-white"
               onClick={TogglePasswordVisibility}
             >
               {isPasswordVisible ? (
