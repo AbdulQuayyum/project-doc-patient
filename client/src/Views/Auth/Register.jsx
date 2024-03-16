@@ -1,8 +1,10 @@
 import React from 'react'
 
+import AuthLayout from '../../Layout/Auth.Layout'
+
 const Register = () => {
     return (
-        <div>Register</div>
+        <AuthLayout>Register</AuthLayout>
     )
 }
 

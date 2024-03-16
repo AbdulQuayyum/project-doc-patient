@@ -11,7 +11,7 @@ const BackToTop = () => {
         })
     }
     return (
-        <a href="#" className='back-to-top'>
+        <a href="#" className='back-to-top dark:text-white'>
             <PiArrowFatLinesUpThin size={24} className='back-to-top-icon' />
         </a>
     )
