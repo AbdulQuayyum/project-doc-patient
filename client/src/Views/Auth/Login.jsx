@@ -41,16 +41,20 @@ const Login = () => {
     }
   };
 
-  const SubmitValues = async () => { }
+  const SubmitValues = async () => {
+    console.log(email, password)
+  }
+
+  const isDisabled = !email || !password || !isValidEmail
 
   return (
     <AuthLayout>
       <div className='flex flex-col bg-white shadow-2xl rounded-2xl border-2 border-white dark:border-black dark:bg-black py-5 sm:py-10 px-6 sm:px-14  transition-[flex] duration-[0.7s] ease-out-flex'>
-        <div className='flex flex-col gap-y-2'>
+        <div className='flex flex-col gap-y-2 mb-3'>
           <span className='font-extrabold text-xl sm:text-2xl text-[#000] dark:text-white'>Welcome back</span>
           <span className='text-[#000] dark:text-white'>Please enter the following information to continue</span>
         </div>
-        <div className='my-4'>
+        <div className='my-3 flex flex-col gap-y-1'>
           <span className='font-extrabold  text-[#000] dark:text-white'>Email Addresss</span>
           <input
             type="email"
@@ -62,7 +66,7 @@ const Login = () => {
           {!isValidEmail && email && <p style={{ color: 'red' }}>Please enter a valid email</p>}
           {isValidEmail && <p style={{ color: 'green' }}>Email is valid</p>}
         </div>
-        <div className='my-4'>
+        <div className='my-3 flex flex-col gap-y-1'>
           <span className='font-extrabold  text-[#000] dark:text-white'>Password</span>
           <div className="relative">
             <input
@@ -72,7 +76,7 @@ const Login = () => {
               placeholder="********"
               className="w-full p-2 text-lg transition-all text-black dark:text-white  duration-500 border-[1px] border-black outline-none rounded-xl dark:bg-transparent dark:border-2 dark:rounded-lg dark:border-white"
             />
-            {passwordStrength !== "Strong" && <p>Password Strength: {passwordStrength}</p>}
+            {passwordStrength !== "Strong" && <p className='text-[#000] dark:text-white'>Password Strength: {passwordStrength}</p>}
             <button
               className="absolute bottom-6 inset-y-0 right-0 flex items-center px-4 text-black dark:text-white"
               onClick={TogglePasswordVisibility}
@@ -87,8 +91,9 @@ const Login = () => {
         </div>
         <div className='flex w-full my-4'>
           <button
+            disabled={isDisabled}
             onClick={SubmitValues}
-            className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-full hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'>
+            className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-full hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white disabled:opacity-70 disabled:cursor-not-allowed'>
             Login
           </button>
         </div>

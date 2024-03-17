@@ -69,7 +69,7 @@ const Register = () => {
     return (
         <AuthLayout>
             <div className='flex flex-col bg-white shadow-2xl rounded-2xl border-2 border-white dark:border-black dark:bg-black py-5 sm:py-10 px-6 sm:px-14  transition-[flex] duration-[0.7s] ease-out-flex'>
-                <div className='flex flex-col gap-y-2'>
+                <div className='flex flex-col gap-y-2 mb-3'>
                     <span className='font-extrabold text-xl sm:text-2xl text-[#000] dark:text-white'>Let's get started</span>
                     <span className='text-[#000] dark:text-white'>Please enter the following information to continue</span>
                 </div>
@@ -109,7 +109,7 @@ const Register = () => {
                             placeholder="********"
                             className="w-full p-2 text-lg transition-all text-black dark:text-white  duration-500 border-[1px] border-black outline-none rounded-xl dark:bg-transparent dark:border-2 dark:rounded-lg dark:border-white"
                         />
-                        {passwordStrength !== "Strong" && <p>Password Strength: {passwordStrength}</p>}
+                        {passwordStrength !== "Strong" && <p className='text-[#000] dark:text-white'>Password Strength: {passwordStrength}</p>}
                         <button
                             className="absolute bottom-6 inset-y-0 right-0 flex items-center px-4 text-black dark:text-white"
                             onClick={TogglePasswordVisibility}
