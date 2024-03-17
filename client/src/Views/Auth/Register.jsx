@@ -60,7 +60,11 @@ const Register = () => {
         setDisableNINInput(disable);
     };
 
-    const SubmitValues = async () => { }
+    const isDisabled = !nin || !email || !password || !isValidEmail || !disableNINInput || passwordStrength !== "Strong"
+
+    const SubmitValues = async () => {
+        console.log(nin, email, password)
+    }
 
     return (
         <AuthLayout>
@@ -78,9 +82,10 @@ const Register = () => {
                         disabled={disableNINInput}
                         onChange={HandleNinChange}
                         placeholder="00000000000"
-                        className="w-full p-2 text-lg transition-all text-black dark:text-white duration-500 border-[1px] border-black outline-none rounded-xl dark:bg-transparent dark:border-2 dark:rounded-lg dark:border-white"
+                        className="w-full p-2 text-lg transition-all text-black dark:text-white duration-500 border-[1px] border-black outline-none rounded-xl dark:bg-transparent dark:border-2 dark:rounded-lg dark:border-white disabled:opacity-70 disabled:cursor-not-allowed"
                     />
-                      {disableNINInput && <p style={{ color: 'green' }}>NIN has been verified</p>}
+                    {disableNINInput && <p style={{ color: 'green' }}>NIN has been verified</p>}
+                    {!disableNINInput && <p style={{ color: 'red' }}>NIN has not been verified</p>}
                 </div>
                 <div className='my-3 flex flex-col gap-y-1'>
                     <span className='font-extrabold  text-[#000] dark:text-white'>Email Addresss</span>
@@ -119,8 +124,9 @@ const Register = () => {
                 </div>
                 <div className='flex w-full my-4'>
                     <button
+                        disabled={isDisabled}
                         onClick={SubmitValues}
-                        className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-full hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'>
+                        className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-full hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white disabled:opacity-70 disabled:cursor-not-allowed'>
                         Create account
                     </button>
                 </div>
