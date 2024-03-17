@@ -7,6 +7,8 @@ import Header from "./Home/Header";
 import Hero from "./Home/Hero";
 import HomeFooter from "./Home/Footer";
 
+import NINOTPModal from "./Modals/NINOTPModal";
+
 import BackToTop from "./BackToTop";
 
-export { Footer, Navbar, About, CardDesign, Header, Hero, HomeFooter, BackToTop }
+export { Footer, Navbar, About, CardDesign, Header, Hero, HomeFooter, NINOTPModal, BackToTop }

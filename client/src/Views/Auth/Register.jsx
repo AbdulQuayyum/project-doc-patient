@@ -4,18 +4,33 @@ import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import cogoToast from '@successtar/cogo-toast';
 
 import AuthLayout from '../../Layout/Auth.Layout'
+import { NINOTPModal } from '../../Components/Index';
 
 const Register = () => {
+    const [nin, setNin] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
+    const [isValidNin, setIsValidNin] = useState(false);
     const [isValidEmail, setIsValidEmail] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState('Weak');
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [disableNINInput, setDisableNINInput] = useState(false);
+    const [showNINOTPModal, setShowNINOTPModal] = useState(false);
 
     function TogglePasswordVisibility() {
         setIsPasswordVisible((prevState) => !prevState);
     }
+
+    const HandleNinChange = (e) => {
+        let inputValue = e.target.value;
+        inputValue = inputValue.replace(/\D/g, '');
+        inputValue = inputValue.slice(0, 11);
+        setNin(inputValue);
+        if (inputValue.length === 11) {
+            setShowNINOTPModal(true);
+        }
+    };
 
     const HandleEmailChange = (e) => {
         const inputValue = e.target.value;
@@ -41,6 +56,10 @@ const Register = () => {
         }
     };
 
+    const HandleDisableNINInput = (disable) => {
+        setDisableNINInput(disable);
+    };
+
     const SubmitValues = async () => { }
 
     return (
@@ -50,7 +69,20 @@ const Register = () => {
                     <span className='font-extrabold text-xl sm:text-2xl text-[#000] dark:text-white'>Let's get started</span>
                     <span className='text-[#000] dark:text-white'>Please enter the following information to continue</span>
                 </div>
-                <div className='my-4'>
+                <div className='my-3 flex flex-col gap-y-1'>
+                    <span className='font-extrabold  text-[#000] dark:text-white'>NIN (National Identification Number)</span>
+                    <input
+                        type="text"
+                        maxLength={11}
+                        value={nin}
+                        disabled={disableNINInput}
+                        onChange={HandleNinChange}
+                        placeholder="00000000000"
+                        className="w-full p-2 text-lg transition-all text-black dark:text-white duration-500 border-[1px] border-black outline-none rounded-xl dark:bg-transparent dark:border-2 dark:rounded-lg dark:border-white"
+                    />
+                      {disableNINInput && <p style={{ color: 'green' }}>NIN has been verified</p>}
+                </div>
+                <div className='my-3 flex flex-col gap-y-1'>
                     <span className='font-extrabold  text-[#000] dark:text-white'>Email Addresss</span>
                     <input
                         type="email"
@@ -62,7 +94,7 @@ const Register = () => {
                     {!isValidEmail && email && <p style={{ color: 'red' }}>Please enter a valid email</p>}
                     {isValidEmail && <p style={{ color: 'green' }}>Email is valid</p>}
                 </div>
-                <div className='my-4'>
+                <div className='my-3 flex flex-col gap-y-1'>
                     <span className='font-extrabold  text-[#000] dark:text-white'>Password</span>
                     <div className="relative">
                         <input
@@ -98,6 +130,7 @@ const Register = () => {
                     </Link>
                 </div>
             </div>
+            {showNINOTPModal && <NINOTPModal showNINOTPModal={showNINOTPModal} setShowNINOTPModal={setShowNINOTPModal} HandleDisableNINInput={HandleDisableNINInput} />}
         </AuthLayout>
     )
 }
