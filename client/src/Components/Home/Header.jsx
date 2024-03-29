@@ -12,12 +12,17 @@ const Header = () => {
         </Link>
         <div className='flex items-center gap-2 gap-x-4'>
           <Link
-            className="sm:flex hidden items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 text-[#000] dark:text-white transition-all duration-150 border-[1px] border-transparent rounded-full dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
+            className="items-center hidden px-4 py-2 text-lg font-medium text-black transition-all duration-150 sm:flex"
+            to="/Pricing"
+          > Pricing
+          </Link>
+          <Link
+            className="items-center hidden px-4 py-2 text-lg font-medium text-black transition-all duration-150 sm:flex"
             to="/Login"
           > Sign in
           </Link>
           <Link
-            className="flex items-center bg-transparent text-lg outlined px-8 md:px-14 font-medium py-2 hover:text-[#fff] dark:hover:text-black transition-all duration-150 border-[1px] border-[#000] dark:border-white rounded-full hover:bg-[#000] dark:hover:bg-white text-[#000] dark:text-white"
+            className="flex items-center bg-black text-white text-lg outlined px-8 md:px-14 font-medium py-2 hover:text-[#000] dark:hover:text-white transition-all duration-150 border-[1px] border-[#000] dark:border-white rounded-md hover:bg-transparent dark:hover:bg-white dark:text-white"
             to="/Register"
           > Doctors
           </Link>

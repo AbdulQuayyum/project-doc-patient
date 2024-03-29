@@ -4,7 +4,7 @@ import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import cogoToast from '@successtar/cogo-toast';
 
 import AuthLayout from '../../Layout/Auth.Layout'
-import DocumentTitle from '../../Utilities/Utilities';
+import { DocumentTitle } from '../../Utilities/Utilities';
 
 const Login = () => {
   DocumentTitle("No Name Yet || SignIn Page") 
@@ -95,7 +95,7 @@ const Login = () => {
           <button
             disabled={isDisabled}
             onClick={SubmitValues}
-            className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-full hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white disabled:opacity-70 disabled:cursor-not-allowed'>
+            className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-md hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white disabled:opacity-70 disabled:cursor-not-allowed'>
             Login
           </button>
         </div>

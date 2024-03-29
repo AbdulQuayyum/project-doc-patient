@@ -29,10 +29,10 @@ const NINOTPModal = ({ showNINOTPModal, setShowNINOTPModal, HandleDisableNINInpu
             <div className="modal-content dark:bg-black">
                 < PiXThin className='modal-close dark:text-[#fff]' onClick={() => setShowNINOTPModal(false)} />
                 <div>
-                    <div className='my-4 gap-y-4 flex flex-col'>
+                    <div className='flex flex-col my-4 gap-y-4'>
                         <div className='flex flex-col gap-y-1'>
-                            <span className='font-extrabold  text-black dark:text-white'>OTP Value</span>
-                            <span className=' font-semibold text-black dark:text-white'>Enter the otp sent to the number linked to your NIN</span>
+                            <span className='font-extrabold text-black dark:text-white'>OTP Value</span>
+                            <span className='font-semibold text-black  dark:text-white'>Enter the otp sent to the number linked to your NIN</span>
                         </div>
                         <input
                             type="text"
@@ -47,7 +47,7 @@ const NINOTPModal = ({ showNINOTPModal, setShowNINOTPModal, HandleDisableNINInpu
                 <div className='flex justify-end gap-x-4'>
                     <button
                         onClick={HandleSubmit}
-                        className='px-8 py-3 text-sm text-black transition-all bg-white border border-black rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:bg-black hover:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'>
+                        className='px-8 py-3 text-sm text-black transition-all bg-white border border-black rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:text-white hover:bg-black hover:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'>
                         Submit
                     </button>
                 </div>
