@@ -75,3 +75,47 @@ export async function CreateUser(req, res) {
         })
     }
 }
+
+export async function SignIn(req, res) {
+
+    try {
+        // Check if the user already exists
+        let CheckUser = await User.findOne({ Email: req.body.Email })
+        if (!CheckUser) {
+            return res.send({
+                success: false,
+                message: "User does not exist"
+            })
+        }
+
+        // Check if Password is valid
+        const ValidatePassword = await bcrypt.compare(req.body.Password, CheckUser.Password) // Use CheckUser.Password
+        if (!ValidatePassword) {
+            return res.send({
+                success: false,
+                message: "Invalid Password"
+            })
+        }
+
+        // Check if the user is verified
+        if (!CheckUser.IsVerified) {
+            return res.send({
+                success: false,
+                message: "User is not verified yet or has been suspended"
+            })
+        }
+
+        // Generate token
+        const Token = jwt.sign({ UserID: CheckUser._id }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+        res.send({
+            message: "User has been signed in successfully",
+            data: Token, // Use Token here
+            success: true
+        })
+    } catch (error) {
+        res.send({
+            message: error.message,
+            success: false
+        })
+    }
+}
