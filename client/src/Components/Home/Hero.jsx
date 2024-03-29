@@ -22,7 +22,7 @@ const Hero = () => {
         <div>
             <div className='flex flex-col-reverse items-center justify-center w-full gap-10 mx-auto mt-0 lg:gap-20 md:mt-20 md:flex-row'>
                 <div className='flex flex-col max-w-md lg:max-w-xl'>
-                    <span className='mb-5 text-4xl lg:text-5xl py-6 font-extrabold text-[#000] dark:text-white'>
+                    <span className='mb-5 text-4xl lg:text-5xl md:text-start text-center py-6 font-extrabold text-[#000] dark:text-white'>
                         A Secure and Confidential Medical Platform
                     </span>
                     <span className='text-[#000] dark:text-white text-base lg:text-lg'>

@@ -4,8 +4,10 @@ import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import cogoToast from '@successtar/cogo-toast';
 
 import AuthLayout from '../../Layout/Auth.Layout'
+import DocumentTitle from '../../Utilities/Utilities';
 
 const Login = () => {
+  DocumentTitle("No Name Yet || SignIn Page") 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
@@ -50,11 +52,11 @@ const Login = () => {
   return (
     <AuthLayout>
       <div className='flex flex-col bg-white shadow-2xl rounded-2xl border-2 border-white dark:border-black dark:bg-black py-5 sm:py-10 px-6 sm:px-14  transition-[flex] duration-[0.7s] ease-out-flex'>
-        <div className='flex flex-col gap-y-2 mb-3'>
+        <div className='flex flex-col mb-3 gap-y-2'>
           <span className='font-extrabold text-xl sm:text-2xl text-[#000] dark:text-white'>Welcome back</span>
           <span className='text-[#000] dark:text-white'>Please enter the following information to continue</span>
         </div>
-        <div className='my-3 flex flex-col gap-y-1'>
+        <div className='flex flex-col my-3 gap-y-1'>
           <span className='font-extrabold  text-[#000] dark:text-white'>Email Addresss</span>
           <input
             type="email"
@@ -66,7 +68,7 @@ const Login = () => {
           {!isValidEmail && email && <p style={{ color: 'red' }}>Please enter a valid email</p>}
           {isValidEmail && <p style={{ color: 'green' }}>Email is valid</p>}
         </div>
-        <div className='my-3 flex flex-col gap-y-1'>
+        <div className='flex flex-col my-3 gap-y-1'>
           <span className='font-extrabold  text-[#000] dark:text-white'>Password</span>
           <div className="relative">
             <input
@@ -78,7 +80,7 @@ const Login = () => {
             />
             {passwordStrength !== "Strong" && <p className='text-[#000] dark:text-white'>Password Strength: {passwordStrength}</p>}
             <button
-              className="absolute bottom-6 inset-y-0 right-0 flex items-center px-4 text-black dark:text-white"
+              className="absolute inset-y-0 right-0 flex items-center px-4 text-black bottom-6 dark:text-white"
               onClick={TogglePasswordVisibility}
             >
               {isPasswordVisible ? (

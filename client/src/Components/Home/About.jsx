@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import CardDesign from './CardDesign'
-import { Img01, Img02, Img03, Img04, Img05 } from '../../Assets/Index';
+import { Img01, Img02, Img03, Img04 } from '../../Assets/Index';
 
 const data = [
     {
@@ -13,8 +13,8 @@ const data = [
     {
         id: "02",
         imgUrl: Img02,
-        title: "Appointment Booking",
-        desc: "Schedule consultations and appointments with trusted healthcare professionals, with the assurance that your medical records will be readily available to facilitate informed discussions and personalized care plans."
+        title: "Secured Medical Record",
+        desc: "Your medical records are secure and safe due to our end to end encryption standards, it is visible to you and the people you choose to share it with."
     },
     {
         id: "03",
@@ -25,12 +25,6 @@ const data = [
     {
         id: "04",
         imgUrl: Img04,
-        title: "Secure Communication",
-        desc: "Engage in confidential conversations with your healthcare providers through our encrypted messaging platform, allowing you to discuss sensitive health matters and share pertinent information with confidence."
-    },
-    {
-        id: "05",
-        imgUrl: Img05,
         title: "Convenience and Accessibility",
         desc: " Enjoy the convenience of accessing your medical records and healthcare services anytime, anywhere, through our user-friendly platform, empowering you to take control of your health on your terms."
     },
@@ -45,7 +39,7 @@ const About = () => {
                 className="2xl:max-w-[1280px] w-full mx-auto flex flex-col"
             >
                 <span
-                    className='mb-5 text-4xl lg:text-5xl py-6 flex items-center justify-center font-extrabold text-[#000] dark:text-white'>
+                    className='mb-5 text-4xl lg:text-5xl py-6 flex items-center md:text-start text-center justify-center font-extrabold text-[#000] dark:text-white'>
                     Why Should you choose our Platform?
                 </span>
                 <div className="mt-[50px] flex xl:flex-row flex-col min-h-[70vh] gap-5">
