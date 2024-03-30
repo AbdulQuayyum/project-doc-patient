@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import cogoToast from '@successtar/cogo-toast';
+import Select from 'react-select'
 
 import AuthLayout from '../../Layout/Auth.Layout'
 import { NINOTPModal } from '../../Components/Index';
 import { DocumentTitle } from '../../Utilities/Utilities';
 
 const Register = () => {
-    DocumentTitle("No Name Yet || Register Page") 
+    DocumentTitle("No Name Yet || Register Page")
     const [nin, setNin] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [accountType, setAccountType] = useState("")
     const [loading, setLoading] = useState(false)
     const [isValidNin, setIsValidNin] = useState(false);
     const [isValidEmail, setIsValidEmail] = useState(false);
@@ -19,6 +21,7 @@ const Register = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [disableNINInput, setDisableNINInput] = useState(false);
     const [showNINOTPModal, setShowNINOTPModal] = useState(false);
+    const navigate = useNavigate();
 
     function TogglePasswordVisibility() {
         setIsPasswordVisible((prevState) => !prevState);
@@ -62,10 +65,41 @@ const Register = () => {
         setDisableNINInput(disable);
     };
 
+    const CustomStyles = {
+        control: (provided) => ({
+            ...provided,
+            cursor: "pointer",
+            color: "#e5e7eb",
+            background: 'transparent',
+            borderColor: "#000",
+            borderWidth: "1px",
+            borderRadius: "12px",
+            minHeight: '48px',
+            padding: "0px 2px"
+        })
+    };
+
+    const AccountTypeData = [
+        {
+            "label": "Individual Account",
+            "datavalue": "individual",
+        },
+        {
+            "label": "Family Account",
+            "datavalue": "family",
+        },
+    ]
+
     const isDisabled = !nin || !email || !password || !isValidEmail || !disableNINInput || passwordStrength !== "Strong"
+    const condition = nin && email && password && isValidEmail && disableNINInput && passwordStrength === "Strong" 
 
     const SubmitValues = async () => {
         console.log(nin, email, password)
+        if (accountType.datavalue === 'family') {
+            navigate('/payment'); 
+        } else {
+            navigate("/Dashboard")
+        }
     }
 
     return (
@@ -124,9 +158,28 @@ const Register = () => {
                         </button>
                     </div>
                 </div>
+                { condition &&
+                <div className='flex flex-col my-3 gap-y-1'>
+                    <label htmlFor="accountType" className="font-extrabold  text-[#000] dark:text-white" >
+                        Select an account type
+                    </label>
+                    <Select
+                        isSearchable
+                        value={accountType}
+                        options={AccountTypeData}
+                        styles={CustomStyles}
+                        placeholder='Select an account type...'
+                        getOptionLabel={(AccountTypeData) => AccountTypeData.label}
+                        getOptionValue={(AccountTypeData) => AccountTypeData.datavalue}
+                        onChange={item => {
+                            setAccountType(item);
+                        }}
+                    />
+                </div>
+                }
                 <div className='flex w-full my-4'>
                     <button
-                        disabled={isDisabled}
+                        // disabled={isDisabled}
                         onClick={SubmitValues}
                         className='w-full px-8 py-3 text-sm text-white transition-all bg-black border border-black rounded-md hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white disabled:opacity-70 disabled:cursor-not-allowed'>
                         Create account

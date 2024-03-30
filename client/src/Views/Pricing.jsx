@@ -141,12 +141,12 @@ const Pricing = () => {
                                     <div className="border-t border-gray-200" />
                                     <div className="p-5">
                                         {plan === "Free" ? (
-                                            <Link to={user ? "/Dashboard" : "/Login"} className='h-11 border-[1px] border-black px-8 inline-flex items-center justify-center w-full text-sm font-medium transition-colors rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 x`'>
+                                            <Link to={user ? "/Dashboard" : "/Register"} className='h-11 border-[1px] border-black px-8 inline-flex items-center justify-center w-full text-sm font-medium transition-colors rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 x`'>
                                                 {user ? 'Upgrade now' : 'Sign up'}
                                                 <TbArrowBigRightLines className="h-5 w-5 ml-1.5" />
                                             </Link>
                                         ) : (
-                                            <Link to={user ? "/Dashboard" : "/Login"} className='inline-flex items-center justify-center w-full px-8 text-sm font-medium text-white transition-colors bg-black rounded-md h-11 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 '>
+                                            <Link to={user ? "/Dashboard" : "/Register"} className='inline-flex items-center justify-center w-full px-8 text-sm font-medium text-white transition-colors bg-black rounded-md h-11 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 '>
                                                 {user ? 'Upgrade now' : 'Sign up'}
                                                 <TbArrowBigRightLines className="h-5 w-5 ml-1.5" />
                                             </Link>
