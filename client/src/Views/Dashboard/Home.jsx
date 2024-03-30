@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Home = () => {
+import { DashboardLayout } from '../../Layout/Dashboard.Layout'
+
+const Dashboard = () => {
     return (
-        <div>Home</div>
+        <DashboardLayout>
+            Dashboard
+        </DashboardLayout>
     )
 }
 
-export default Home
+export default Dashboard

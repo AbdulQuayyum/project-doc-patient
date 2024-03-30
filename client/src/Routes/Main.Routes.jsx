@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 
-import { Home, Payment, Pricing, Login, Register } from "../Views/Index"
+import { Home, Payment, Pricing, Login, Register, Dashboard } from "../Views/Index"
 
 const MainRoutes = () => {
     return (
@@ -11,6 +11,7 @@ const MainRoutes = () => {
             <Route path='/Pricing' element={<Pricing />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/Register' element={<Register />} />
+            <Route path='/Dashboard' element={<Dashboard />} />
         </Routes>
     )
 }

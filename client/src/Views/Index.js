@@ -3,6 +3,8 @@ import Payment from "./Payment";
 import Pricing from "./Pricing";
 
 import Login from "./Auth/Login";
-import Register from "./Auth/Register";
+import Register from "./Auth/Register"
 
-export { Home, Payment, Pricing, Login, Register }
+import Dashboard from "./Dashboard/Home";
+
+export { Home, Payment, Pricing, Login, Register, Dashboard }
