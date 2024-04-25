@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
-import { TbArrowBigLeftLines, TbListDetails } from "react-icons/tb"
+import cogoToast from '@successtar/cogo-toast';
+import { TbArrowBigLeftLines } from "react-icons/tb"
 import { RxDashboard } from "react-icons/rx"
 import { PiFilesThin } from "react-icons/pi"
 import { IoSettingsOutline } from "react-icons/io5"
@@ -23,6 +24,12 @@ const Sidebar = () => {
     };
 
     const HandleLogout = () => {
+        cogoToast.success(
+            <div>
+                <b>Success</b>
+                <div>User logged out successfully</div>
+            </div>, { position: 'top-right' }
+        )
         async function nextPage() {
             await delay(2000)
             window.location.reload()
