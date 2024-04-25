@@ -30,7 +30,7 @@ const DashboardHeaderDropdown = ({ customRef }) => {
                 <span className='py-2'>Welcome back</span>
                 <span className='text-[#848AA1] py-2 text-[14px]'>test@test.com</span>
             </div>
-            <Link to='/Settings' className='flex items-center gap-x-2 w-full pb-3 border-b border-[#848AA1]'>
+            <Link to='/Settings' className='flex items-center w-full pb-3 mb-8 gap-x-2'>
                 <IoSettingsOutline size={18} color='#101042' />
                 <span>Settings </span>
             </Link>

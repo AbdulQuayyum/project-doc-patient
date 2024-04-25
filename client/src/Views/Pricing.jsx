@@ -7,6 +7,7 @@ import { TbArrowBigRightLines } from 'react-icons/tb'
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../Components/UI/Tooltip'
 import HomeLayout from '../Layout/Home.Layout'
+import { cn } from '../Utilities/Utilities'
 import { DocumentTitle } from '../Utilities/DocumentTitle'
 
 const Pricing = () => {

@@ -37,8 +37,8 @@ const Sidebar = () => {
         nextPage()
     }
 
-    const activeLink = "flex items-center px-4 py-2 my-2 text-[#000] border-l-4 border-[#000] transition-all duration-500 bg-[#e5e7eb] dark:bg-gray-700 dark:text-gray-200";
-    const normalLink = "flex items-center px-4 py-2 my-2 text-gray-400 border-l-4 border-transparent transition-all duration-500 transform rounded-md dark:text-gray-400 hover:bg-[$F4F4F5] hover:text-black dark:hover:bg-gray-700 dark:hover:text-gray-200";
+    const activeLink = "flex items-center px-4 py-2 my-2 text-[#000] border-l-4 border-[#000] transition-all duration-150 bg-[#e5e7eb] dark:bg-gray-700 dark:text-gray-200";
+    const normalLink = "flex items-center px-4 py-2 my-2 text-gray-400 border-l-4 border-transparent transition-all duration-150 bg-transparent dark:text-gray-400 hover:bg-[$F4F4F5] hover:text-black dark:hover:bg-gray-700 dark:hover:text-gray-200";
 
     return (
         <div className="z-50 flex flex-col min-h-screen py-2 sm:py-4 w-72 dark:border-gray-600">
@@ -59,7 +59,7 @@ const Sidebar = () => {
                     </div>
                     <div className="flex flex-col justify-between flex-1 h-screen">
                         <div className="flex flex-col justify-between mt-10 h-[85vh]">
-                            <div className="transition-all duration-500 ">
+                            <div className="transition-all duration-150">
                                 <NavLink
                                     to="/Dashboard"
                                     onClick={HandleCloseSideBar}
