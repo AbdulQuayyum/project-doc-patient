@@ -1,12 +1,16 @@
 import React from 'react'
 
 import { DashboardLayout } from '../../Layout/Dashboard.Layout'
+import { DashboardTitle } from '../../Components/Index'
+import { DocumentTitle } from '../../Utilities/DocumentTitle'
 
 const Records = () => {
+    DocumentTitle("No Name Yet || A Medical Platform - Records Page")
+    
     return (
         <DashboardLayout>
             <div className='flex flex-col'>
-                <span className='text-4xl lg:text-5xl md:text-start text-center py-6 font-extrabold text-[#000] dark:text-white'>Records</span>
+                <DashboardTitle Title="Records Page" />
                 <ul className='flex flex-col gap-y-2'>
                     <li className='text-[#000] dark:text-white text-base lg:text-lg'>Medical History: Provide a comprehensive view of the patient's medical history, including past diagnoses, treatments, medications, lab results, and imaging studies.</li>
                     <li className='text-[#000] dark:text-white text-base lg:text-lg'>Consultation Notes: Allow doctors to document consultation notes, treatment plans, and other relevant information for each patient encounter.</li>

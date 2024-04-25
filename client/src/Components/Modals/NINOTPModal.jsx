@@ -32,7 +32,7 @@ const NINOTPModal = ({ showNINOTPModal, setShowNINOTPModal, HandleDisableNINInpu
                     <div className='flex flex-col my-4 gap-y-4'>
                         <div className='flex flex-col gap-y-1'>
                             <span className='font-extrabold text-black dark:text-white'>OTP Value</span>
-                            <span className='font-semibold text-black  dark:text-white'>Enter the otp sent to the number linked to your NIN</span>
+                            <span className='font-semibold text-black dark:text-white'>Enter the otp sent to the number linked to your NIN</span>
                         </div>
                         <input
                             type="text"

@@ -2,6 +2,8 @@ import Footer from "./Auth/Footer";
 import Navbar from "./Auth/Navbar";
 
 import DashboardHeader from "./Dashboard/Header";
+import DashboardHeaderDropdown from "./Dashboard/HeaderDropdown";
+import DashboardTitle from "./Dashboard/DashboardTitle";
 import Sidebar from "./Dashboard/Sidebar";
 
 import About from "./Home/About";
@@ -14,4 +16,4 @@ import NINOTPModal from "./Modals/NINOTPModal";
 
 import BackToTop from "./BackToTop";
 
-export { Footer, Navbar, DashboardHeader, Sidebar, About, CardDesign, Header, Hero, HomeFooter, NINOTPModal, BackToTop }
+export { Footer, Navbar, DashboardHeader, DashboardHeaderDropdown, DashboardTitle, Sidebar, About, CardDesign, Header, Hero, HomeFooter, NINOTPModal, BackToTop }

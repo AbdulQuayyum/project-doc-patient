@@ -4,10 +4,10 @@ import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import cogoToast from '@successtar/cogo-toast';
 
 import AuthLayout from '../../Layout/Auth.Layout'
-import { DocumentTitle } from '../../Utilities/Utilities';
+import { DocumentTitle } from '../../Utilities/DocumentTitle'
 
 const Login = () => {
-  DocumentTitle("No Name Yet || SignIn Page") 
+  DocumentTitle("No Name Yet || A Medical Platform - SignIn Page") 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)

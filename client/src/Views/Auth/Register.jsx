@@ -6,10 +6,10 @@ import Select from 'react-select'
 
 import AuthLayout from '../../Layout/Auth.Layout'
 import { NINOTPModal } from '../../Components/Index';
-import { DocumentTitle } from '../../Utilities/Utilities';
+import { DocumentTitle } from '../../Utilities/DocumentTitle'
 
 const Register = () => {
-    DocumentTitle("No Name Yet || Register Page")
+    DocumentTitle("NNo Name Yet || A Medical Platform - Register Page")
     const [nin, setNin] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")

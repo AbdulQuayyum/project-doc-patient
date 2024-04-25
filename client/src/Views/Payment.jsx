@@ -2,7 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { PiArrowFatLinesRightLight } from "react-icons/pi";
 
+import { DocumentTitle } from '../Utilities/DocumentTitle'
+
 const Payment = () => {
+    DocumentTitle("No Name Yet || A Medical Platform - Payments Page")
+    
     return (
         <div className='flex flex-col-reverse items-center justify-center w-full gap-10 mx-auto px-[10px] mt-0 lg:gap-20 md:mt-20 md:flex-row'>
             <div className='flex flex-col max-w-md lg:max-w-xl'>

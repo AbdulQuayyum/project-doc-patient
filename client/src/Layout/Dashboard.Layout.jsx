@@ -18,7 +18,7 @@ export const DashboardLayout = ({ children }) => {
         <div>
             <div className="relative flex min-h-screen antialiased transition-all duration-150 grainy">
                 {activeMenu ? (
-                    <div className="fixed bg-white w-72 sidebar dark:bg-[#283046]">
+                    <div className="fixed transition-all border-r border-gray-200 bg-white/75 backdrop-blur-lg w-72 sidebar">
                         <Sidebar />
                     </div>
                 ) : (<div className="w-0 bg-none"> <Sidebar /> </div>)}

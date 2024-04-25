@@ -1,8 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useState, useRef, useEffect } from 'react';
 import { HiMenuAlt2 } from "react-icons/hi"
+import { CiUser } from "react-icons/ci";
 import { PiUserThin } from "react-icons/pi";
 
 import { UseStateContext } from "../../Contexts/Dashboard.Context"
+import DashboardHeaderDropdown from "./HeaderDropdown";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
     <div content={title} position="BottomCenter">
@@ -23,7 +25,25 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const DashboardHeader = () => {
     const { activeMenu, setActiveMenu, setScreenSize, screenSize } = UseStateContext();
+    const [isDropdown, setIsDropdown] = useState(false)
+    const dropdownRef = useRef(null);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDropdown(false);
+          }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, []);
+
+    const HandleOpen = () => {
+        setIsDropdown((prev) => !prev);
+    };
 
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth);
@@ -54,12 +74,13 @@ const DashboardHeader = () => {
                         icon={<HiMenuAlt2 className="mt-1 dark:text-white" />}
                     />
                 }
-                <div className="flex-grow" /> 
-                    <NavButton
-                        title="User"
-                        // customFunc={HandleActiveMenu}
-                        icon={<PiUserThin className="mt-1 dark:text-white" />}
-                    />
+                <div className="flex-grow" />
+                <div onClick={HandleOpen} className='relative flex p-2 border rounded-lg cursor-pointer border-primary'>
+                    <CiUser size={20} color='#101042' />
+                </div>
+                {isDropdown && (
+                    <DashboardHeaderDropdown customRef={dropdownRef} />
+                )}
             </div>
         </nav>
     )
